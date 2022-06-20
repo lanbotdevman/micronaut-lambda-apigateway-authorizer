@@ -1,14 +1,14 @@
 package ee.lbdm.lambda.authorizer;
+
+import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import java.util.Collections;
-import java.util.Map;
 
 @Controller
 public class HomeController {
 
     @Get
-    public Map<String, Object> index() {
-        return Collections.singletonMap("message", "Hello World");
+    public AwsProxyRequest index(AwsProxyRequest request) {
+        return request;
     }
 }
